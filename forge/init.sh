@@ -50,8 +50,8 @@ if [ "$MODPACK" ]; then
   rm -f mods/*.jar mods/*.zip
   printf "Downloading mods...\n"
   for i in $(jq -cr '.files[]' < /tmp/manifest.json); do
-    projectID=$(printf "$i" | jq -r '.projectID')
-    fileID=$(printf "$i" | jq -r '.fileID')
+    projectID=$(jq -r '.projectID')
+    fileID=$(jq -r '.fileID')
     dlUrl=$(curl https://addons-ecs.forgesvc.net/api/v2/addon/$projectID/file/$fileID/download-url)
     wget --content-disposition -qP mods $(curl -Lso /dev/null -w %{url_effective} $dlUrl)
   done
