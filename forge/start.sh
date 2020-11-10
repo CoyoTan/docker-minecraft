@@ -3,4 +3,5 @@
 if [ ! -e /forge/.init_done ]; then
   /init.sh $@
 fi
-exec java $@ -jar /forge/forge-*-universal.jar nogui
+#Forge changed the name of their jars. Removed Universal accordingly.
+exec java $@ -jar /forge/forge-*.jar nogui
