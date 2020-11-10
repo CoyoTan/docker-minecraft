@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  minecraft:
+    container_name: "Minecraft"
+    build: .
+    ports:
+      - "25565:25565"
+    volumes:
+      - /home/user/Documents/containers/data:/data"
+    environment:
+      #This can be either an https download link for a zip file, or a file in the /data directory.
+      - MODPACK=modpack.zip
+    command: -Xms256M -Xmx1024M
