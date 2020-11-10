@@ -1,5 +1,5 @@
 # Minecraft server for Docker
-Containerized Minecraft server that runs on Debian Slim
+Containerized Minecraft server that runs on Alpine linux with bash.
 
 ## Available tags and Dockerfiles
 -	[`vanilla`, `latest`, (*vanilla/Dockerfile*)](https://github.com/dtp/docker-minecraft/blob/master/vanilla/Dockerfile)
