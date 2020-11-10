@@ -32,7 +32,7 @@ after specifying the container image.
 ```console
 $ docker run -itd --name minecraft -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft -Xms512M -Xmx1G
 ```
-### Using the Forge image
+### Using the Forge image (Updated to be compatible with the recent Twitch takeover of Curseforge)
 Starting a simple Forge server is similar to vanilla.
 ```console
 $ docker run -itd --name minecraft -e VERSION="1.10.2-recommended" -p 25565:25565 -v /path/to/minecraft:/data cmstar/minecraft
