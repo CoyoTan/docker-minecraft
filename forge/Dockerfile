@@ -7,7 +7,7 @@
 FROM openjdk:8-jre-slim
 
 # Install dependencies
-#Unzip is no longer native to Ubuntu. It needed to be added in.
+#Unzip is no longer native. It needed to be added in.
 RUN apt-get update; \
     apt-get install -y --no-install-recommends wget curl unzip ca-certificates jq; \
     rm -rf /var/lib/apt/lists/*; \
