@@ -50,7 +50,7 @@ if [ "$MODPACK" ]; then
   rm -f mods/*.jar mods/*.zip
   printf "Downloading mods...\n"
   for i in $(jq -cr '.files[]' < /tmp/manifest.json); do
-    wget --content-disposition -qP mods $(curl -Lso /dev/null -w %{url_effective} $(curl -s https://addons-ecs.forgesvc.net/api/v2/addon/$(printf "$i" | jq -r '.projectID')/file/$(printf "$i" | jq -r '.fileID')/download-url))
+    wget -qP mods $(curl -Lso /dev/null -w %{url_effective} $(curl -s https://addons-ecs.forgesvc.net/api/v2/addon/$(printf "$i" | jq -r '.projectID')/file/$(printf "$i" | jq -r '.fileID')/download-url))
   done
   printf "Using modpack overrides...\n"
   cp -r /tmp/$(jq -r '.overrides' < /tmp/manifest.json)/* .
